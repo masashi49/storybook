@@ -35,3 +35,11 @@ Archived.args = {
         state : 'TASK_ARCHIVED'
     }
 }
+
+export const hello = Template.bind( {} );
+hello.args = {
+    task: {
+        ...Default.args.task,
+        state : 'HELLO'
+    }
+}

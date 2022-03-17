@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 // このコンポーネントを構成するために必要な情報を詰め込む。
 // storybook側ではTASK_ARCHIVEDといったstateで切り替わる表示を設定済み。
 // 受け取ったメソッドの動きは関係ない。
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
     return (
-        <div className={`list-item ${state}`}>
+        <div className={ `list-item ${ state }` }>
+             { state === 'HELLO' && `こんにちわ`}
             <input
                 type="checkbox"
                 defaultChecked={ state === 'TASK_ARCHIVED' }
@@ -28,6 +30,17 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
                     </span>
                 )}
             </div>
+            { state === 'HELLO' && `さようなら`}
         </div>
   );
+}
+
+Task.propTypes = {
+    task: {
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        state : PropTypes.string.isRequired
+    },
+    onArchiveTask: PropTypes.func,
+    onPinTask:PropTypes.func
 }
