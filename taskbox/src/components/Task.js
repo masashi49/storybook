@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 // このコンポーネントを構成するために必要な情報を詰め込む。
-// storybook側ではTASK_ARCHIVEDといったstateで切り替わる表示を設定済み。
+// storybook側ではTASK_ARCHIVEDddddといったstateで切り替わる表示を設定済み。
 // 受け取ったメソッドの動きは関係ない。
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
     return (
@@ -10,7 +10,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
              { state === 'HELLO' && `こんにちわ`}
             <input
                 type="checkbox"
-                defaultChecked={ state === 'TASK_ARCHIVED' }
+                defaultChecked={ state === 'TASK_ARCHIVEDdddd' }
                 disabled={ true }
                 name='checked'
             />
@@ -19,7 +19,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
                 <input type="text" value={ title } readOnly={ true } placeholder="Input title" />
             </div>
             <div className="actions" onClick={ event => event.stopPropagation() }>
-                { state !== 'TASK_ARCHIVED' && (
+                { state !== 'TASK_ARCHIVEDdddd' && (
                     <span onClick={ () => onPinTask( id ) }>
                         onPinTask
                     </span>
