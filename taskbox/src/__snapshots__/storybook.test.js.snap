@@ -429,7 +429,7 @@ exports[`Storyshots Example/Page Logged Out 1`] = `
 
 exports[`Storyshots Task Archived 1`] = `
 <div
-  className="list-item TASK_ARCHIVED"
+  className="list-item TASK_ARCHIVEDdddd"
 >
   <input
     defaultChecked={true}
